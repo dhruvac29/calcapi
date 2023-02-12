@@ -3,7 +3,10 @@ const app = express();
 const port = 4000;
 var cors = require('cors')
 
-app.use(cors())
+
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://funnyapp-five.vercel.app/']
+}));
 
 app.get('/:operator/:num1/:num2', (req, res) => {
     const { operator, num1, num2 } = req.params;
